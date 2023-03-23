@@ -1,0 +1,106 @@
+.aboutSectionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  padding: 0 5% 5% 5%;
+  background-color: white;
+  gap: 2%;
+  border-top: 0.1rem solid #097179;
+}
+.sectionHeader {
+  font-family: "Montserrat-Medium";
+  color: #097179;
+  font-size: 3rem;
+  padding: 2rem;
+  background: rgb(9, 113, 121, 0.3);
+  align-self: baseline;
+  text-align: center;
+  margin: 5% 0;
+  inset: 0;
+  width: 100%;
+  border: .1rem solid #097179;
+  border-radius: 5px;
+}
+
+
+.biography {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  color: #097179;
+  text-align: left;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 5px;
+  /* border: .1rem solid #097179; */
+
+  
+}
+.biography p {
+  font-family: "LatoRegular";
+  font-weight: 300;
+  font-size: 18px;
+  color: #097179;
+  line-height: 1.5;
+}
+.biography button {
+  color:#097179;
+  background-color: rgb(9, 113, 121, 0.3);
+  border: .1rem solid #097179;
+  border-radius: 5px;
+  padding: 1rem;
+
+}
+.skillsSection {
+  color: #097179;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  margin-top: 5%;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 5px;
+  /* border: .1rem solid #097179; */
+  
+}
+
+
+
+.biography p {
+  margin: 1rem;
+}
+.biography button {
+  float: right;
+}
+
+.header {
+  display: flex;
+  border-bottom: 0.1rem solid #097179;
+  padding-bottom: 0.1rem;
+  font-family: "Montserrat-Medium";
+  font-style: normal;
+  font-weight: 500;
+  color: #097179;
+}
+
+.header h2 {
+  margin: 0 0 0 0.4rem;
+}
+
+.technologiesGraphicContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media screen and (width < 1075px) {
+  .skillsSection {
+    width: auto;
+  }
+  .biography {
+    width: 95%;
+  }
+  
+}

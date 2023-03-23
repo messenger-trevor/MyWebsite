@@ -1,0 +1,10 @@
+.techCard {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+
+}

@@ -1,0 +1,70 @@
+
+.landingSection {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10% auto;
+  align-items: center;
+  justify-content: center;
+  padding: max(3vh, 1rem);
+  
+}
+
+.landingSectionText {
+  display: flex;
+  flex-direction: column;
+  color: #097179;
+  max-width: 442px;
+  
+}
+
+.landingSectionText h1 {
+  white-space: nowrap;
+  font-family: "LatoLightItalic";
+  font-weight: 600;
+  font-size: 3rem;
+  align-items: left;
+  margin: 0;
+  margin-bottom: 5%;
+
+}
+
+.landingSectionText h2 {
+  font-family: "LatoLightItalic";
+  font-weight: 400;
+  font-size: 2rem;
+  align-items: left;
+  margin: 0;
+
+}
+.buttonBar {
+  position: relative;
+  display: flex;
+  justify-content: right;
+ 
+}
+.buttonBar button {
+  border-style: hidden;
+  background: transparent;
+  position: relative;
+}
+.buttonBar button:hover {
+  background-color: white;
+  cursor: pointer;
+  background: transparent;
+}
+.buttonBar button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #097179;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms;
+}
+.buttonBar button:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
