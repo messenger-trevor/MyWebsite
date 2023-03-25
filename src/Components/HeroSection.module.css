@@ -2,44 +2,67 @@
 .landingSection {
   display: flex;
   flex-wrap: wrap;
-  margin: 10% auto;
+  margin: auto;
   align-items: center;
   justify-content: center;
-  padding: max(3vh, 1rem);
+  height: 100vh;
   
+}
+.graphic {
+  transform: translate(50px);
+}
+.orangeHighlight {
+  position: absolute;
+  width: 500px;
+  height: 60px;
+  background-color: #e8986b;
+  transform: translate(85px, 55px);
+
+}
+.LogoStuff {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  font-size: 70px;
+  line-height: 110px;
+}
+.LogoStuff span {
+  font-size: 300px;
+  line-height: 220px;
 }
 
 .landingSectionText {
   display: flex;
   flex-direction: column;
   color: #097179;
-  max-width: 442px;
   
 }
 
 .landingSectionText h1 {
-  white-space: nowrap;
-  font-family: "LatoLightItalic";
-  font-weight: 600;
-  font-size: 3rem;
-  align-items: left;
+  
+  font-family: "Montserrat-Medium";
+  font-weight: 900;
   margin: 0;
   margin-bottom: 5%;
 
 }
 
 .landingSectionText h2 {
-  font-family: "LatoLightItalic";
-  font-weight: 400;
-  font-size: 2rem;
+  font-family: "LatoRegular";
+  color: black;
+  font-weight: 100;
+  font-size: 4rem;
   align-items: left;
   margin: 0;
+  transform: translate(110px, -10px);
+  
 
 }
 .buttonBar {
   position: relative;
   display: flex;
-  justify-content: right;
+  justify-content: left;
+  transform: translate(110px, -10px);
  
 }
 .buttonBar button {

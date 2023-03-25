@@ -18,7 +18,7 @@ function App() {
   const scaleX = useSpring(scrollYProgress);
   return (
     <div>
-      <div className={classes.backgroundGreenPolygon}></div>
+      {/* <div className={classes.backgroundGreenPolygon}></div> */}
       <Header />
       <motion.div className={classes.progressBar} style={{ scaleX }} />
       <HeroSection />

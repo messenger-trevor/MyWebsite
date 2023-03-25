@@ -8,15 +8,18 @@ import FlyInRight from "./AnimationWrappers/FlyInRight";
 const HeroSection = () => {
   return (
     <div className={classes.landingSection}>
-      <FlyInRight>
-        <img src={illustrationOfSelf} alt="Illustration of Me Coding" />
-      </FlyInRight>
       <FlyInLeft>
+        <div className={classes.orangeHighlight}></div>
         <div className={classes.landingSectionText}>
-          <h1>Hello, I'm Trevor.</h1>
+          <div className={classes.LogoStuff}>
+            <span>/</span>
+            <h1>
+              Trevor <br />
+              Messenger
+            </h1>
+          </div>
           <h2>
-            <b> A Full Stack Engineer </b>with a diverse skill set all backed by
-            a strong collaborative voice.{" "}
+            <b>Full Stack Engineer </b>
           </h2>
           <div className={classes.buttonBar}>
             <button>
@@ -28,6 +31,9 @@ const HeroSection = () => {
           </div>
         </div>
       </FlyInLeft>
+      <FlyInRight>
+        <img className={classes.graphic} src={illustrationOfSelf} alt="Illustration of Me Coding" />
+      </FlyInRight>
     </div>
   );
 };
