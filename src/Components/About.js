@@ -13,6 +13,7 @@ import CSSLogo from "../Assets/CSSLogo.svg";
 import FlyInLeft from "./AnimationWrappers/FlyInLeft";
 import FlyInRight from "./AnimationWrappers/FlyInRight";
 import PopulateChildrenDelayed from "./AnimationWrappers/PopulateChildrenDelayed";
+import Highlight from "./Highlight.js";
 
 const About = () => {
   const logoData = [
@@ -29,9 +30,10 @@ const About = () => {
 
   return (
     <div className={classes.aboutSectionContainer}>
-      <h1 id="AboutMeLink" className={classes.sectionHeader}>
-        About Me
-      </h1>
+      <div id="AboutMeLink" className={classes.sectionHeader}>
+        <Highlight translate="15" />
+        <h1>Skills</h1>
+      </div>
       <FlyInRight>
         <div className={classes.biography}>
           <div className={classes.header}>
@@ -58,8 +60,8 @@ const About = () => {
             fall expected graduation. Relevant course work includes coding in
             Java and Python, building web applications utilizing the MERN tech
             stack, data structures/algorithms, database design, project
-            lifecycle management, UI/UX design, and a foundational
-            understanding of IT and network security.
+            lifecycle management, UI/UX design, and a foundational understanding
+            of IT and network security.
           </p>
           <p>
             I previously obtained a Bachelors of Fine Arts from Southern Utah

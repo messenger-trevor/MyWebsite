@@ -10,17 +10,13 @@
 }
 .sectionHeader {
   font-family: "Montserrat-Medium";
-  color: #097179;
-  font-size: 3rem;
+  color: black;
+  font-size: 2rem;
   padding: 2rem;
-  background: rgb(9, 113, 121, 0.3);
-  align-self: baseline;
-  text-align: center;
+  text-align: right;
   margin: 5% 0;
-  inset: 0;
   width: 100%;
-  border: .1rem solid #097179;
-  border-radius: 5px;
+  background-color: transparent;
 }
 
 

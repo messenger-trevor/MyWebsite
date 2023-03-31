@@ -2,14 +2,16 @@
 .landingSection {
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
+  margin: 0;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: fit-content;
+  padding-top: 5%;
+  padding-bottom: 5%;
   
 }
 .graphic {
-  transform: translate(50px);
+  transform: translate(75px, 0px);
 }
 .orangeHighlight {
   position: absolute;
@@ -90,4 +92,38 @@
 .buttonBar button:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+@media screen and (width < 1075px) {
+  .LogoStuff {
+    font-size: 35px;
+    line-height: 55px;
+    grid-template-columns: repeat(8, 50px);
+
+  }
+  .LogoStuff span {
+    font-size: 150px;
+    line-height: 110px;
+  }
+  .landingSectionText h2 {
+    font-weight: 100;
+    font-size: 2rem;
+  }
+  .buttonBar, .landingSectionText h2 {
+    transform: translate(55px, -10px);
+  }
+  .buttonBar img{
+    height: 25px;
+    width: 25px;
+  }
+  .graphic {
+    height: 225px;
+    width: 475px;
+    transform: translate(50px, 50px);
+  }
+  .orangeHighlight {
+    width: 250px;
+    height: 30px;
+    transform: translate(42.5px, 27.5px);
+  
+  }
 }

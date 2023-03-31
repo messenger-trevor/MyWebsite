@@ -26,7 +26,7 @@
   top: 0;
   right: 0;
   transition: transform 0.3s ease-in-out;
-  background: #efe3c2;
+  background: white;
   z-index: 3;
   border-left: 0.1rem solid #097179;
   transform: translateY(0);
@@ -48,7 +48,7 @@
   top: 0;
   right: 0;
   transition: transform 0.5s ease-in-out;
-  background: #efe3c2;
+  background: white;
   z-index: 3;
   border-right: 0.1rem solid #097179;
   transform: translateY(-100vh);
@@ -68,7 +68,7 @@ nav {
   position: sticky;
   top: 0;
   border-bottom: 0.1rem solid #097179;
-  background-color: #efe3c2;
+  background-color: white;
   padding-left: 5%;
   padding-right: 5%;
   z-index: 4;
