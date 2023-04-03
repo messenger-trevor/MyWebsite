@@ -30,11 +30,26 @@ const About = () => {
 
   return (
     <div className={classes.aboutSectionContainer}>
-      <div id="AboutMeLink" className={classes.sectionHeader}>
-        <Highlight translate="15" />
-        <h1>Skills</h1>
+      <div className={classes.lineGraphic1}>LINE GRAPHIC</div>
+      <div style={{display: 'flex', flexDirection: "column"}}>
+        <div id="AboutMeLink" className={classes.sectionHeader}>
+          <h1>Skills</h1>
+        </div>
+        <div className={classes.skillsSection}>
+          <PopulateChildrenDelayed>
+            {logoData.map((logo) => {
+              return (
+                <TechCard
+                  key={logo.index}
+                  image={logo.file}
+                  altText={logo.altText}
+                />
+              );
+            })}
+          </PopulateChildrenDelayed>
+        </div>
       </div>
-      <FlyInRight>
+      {/* <FlyInRight>
         <div className={classes.biography}>
           <div className={classes.header}>
             <img src={profileIcon} alt="Orange Profile Icon" />
@@ -107,7 +122,7 @@ const About = () => {
             </PopulateChildrenDelayed>
           </div>
         </FlyInLeft>
-      </div>
+      </div> */}
     </div>
   );
 };

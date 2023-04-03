@@ -51,7 +51,7 @@
   background: white;
   z-index: 3;
   border-right: 0.1rem solid #097179;
-  transform: translateY(-100vh);
+  transform: translateY(-119vh);
 }
 
 .pulloutMenu ul,
@@ -63,7 +63,7 @@
 nav {
   display: flex;
   justify-content: space-between;
-  height: 4em;
+  height: 3em;
   align-items: center;
   position: sticky;
   top: 0;
