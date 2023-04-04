@@ -14,6 +14,7 @@ import FlyInLeft from "./AnimationWrappers/FlyInLeft";
 import FlyInRight from "./AnimationWrappers/FlyInRight";
 import PopulateChildrenDelayed from "./AnimationWrappers/PopulateChildrenDelayed";
 import Highlight from "./Highlight.js";
+import { TypeAnimation } from "react-type-animation";
 
 const About = () => {
   const logoData = [
@@ -30,8 +31,39 @@ const About = () => {
 
   return (
     <div className={classes.aboutSectionContainer}>
-      <div className={classes.lineGraphic1}>LINE GRAPHIC</div>
-      <div style={{display: 'flex', flexDirection: "column"}}>
+      <div className={classes.lineGraphic1}>
+        <span style={{ fontSize: "2.5em", padding: "100px", height: '400px'}}>
+          <span
+            style={{
+              width: '300px'
+            }}
+          >
+            A developer who gets&nbsp;
+          </span>
+          <TypeAnimation
+            style={{ whiteSpace: "pre-line", width: "500px", height: "280px" }}
+            sequence={[
+              "frontend",
+              1000,
+              "frontend\n\nWeb Apps\nUI/UX Design\nSEO Optimization",
+              1000,
+              "backend\n\nData Structures\nAPI's\nDatabase Design",
+              1000,
+              "collaboration\n\nSoft Skills\nProject Lifecycle\nVersion Control",
+              1000,
+            ]}
+            repeat={Infinity}
+          />
+        </span>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          direction: "rtl",
+          overflow: "hidden",
+        }}
+      >
         <div id="AboutMeLink" className={classes.sectionHeader}>
           <h1>Skills</h1>
         </div>

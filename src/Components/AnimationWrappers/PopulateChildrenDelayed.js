@@ -21,7 +21,7 @@ const PopulateChildrenDelayed = (props) => {
         padding: "0",
         display: "flex",
         flexWrap: "wrap",
-        gap: ".4rem",
+        gap: "1rem",
       }}
       initial="hidden"
       whileInView="visible"

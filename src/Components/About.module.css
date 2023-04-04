@@ -1,16 +1,18 @@
 .aboutSectionContainer {
+  font-family: "Montserrat-Medium";
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
-  overflow: wrap;
-  padding: 0 5% 5% 5%;
+  justify-content: center;
+  /* padding: 0 5% 5% 5%; */
   background-color: white;
-  gap: 2%;
+  /* gap: 2%; */
   border-top: 0.1rem solid #097179;
 }
 .lineGraphic1 {
-  width: 40vw;
-  height: 50vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 .sectionHeader {
@@ -59,7 +61,7 @@
 }
 .skillsSection {
   display: flex;
-  width: 20%;
+  width: 35vw;
   padding: 1rem;
   background-color: white;
   border-radius: 5px;
@@ -86,11 +88,6 @@
   margin: 0 0 0 0.4rem;
 }
 
-.technologiesGraphicContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
 
 @media screen and (width < 1075px) {
   .skillsSection {
