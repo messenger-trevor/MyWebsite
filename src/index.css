@@ -2,6 +2,7 @@ body {
   background: rgba(240,244,209,255);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 @font-face {

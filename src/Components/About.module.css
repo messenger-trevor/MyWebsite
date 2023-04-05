@@ -3,91 +3,54 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* padding: 0 5% 5% 5%; */
   background-color: white;
-  /* gap: 2%; */
   border-top: 0.1rem solid #097179;
+  padding: 5%;
 }
 .lineGraphic1 {
-  width: 50vw;
+  width: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .sectionHeader {
-  
   padding: 0;
   margin: 0;
   width: 40vw;
   background: transparent;
-  text-align: right;
-
 }
 .sectionHeader h1 {
+  margin: 0;
   font-family: "Montserrat-Medium";
   color: black;
   font-size: 80px;
-  width: auto;
-  background: linear-gradient(#e8986b, #e8986b) bottom right/60% 50%;
+}
+.skills {
+  text-align: right;
+  background: linear-gradient(#e8986b, #e8986b) bottom right/67% 45%;
   background-position: left 100% top 100%;
   background-repeat: no-repeat;
 }
+.Experience {
+  background: linear-gradient(#e8986b, #e8986b) center/67% 45%;
+  background-position: left 50% top 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.about {
+  background: linear-gradient(#e8986b, #e8986b) bottom left/67% 45%;
+  background-position: right 100% top 100%;
+  background-repeat: no-repeat;
+}
 
-.biography {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  color: #097179;
-  text-align: left;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 5px;
-  /* border: .1rem solid #097179; */
-}
-.biography p {
-  font-family: "LatoRegular";
-  font-weight: 300;
-  font-size: 18px;
-  color: #097179;
-  line-height: 1.5;
-}
-.biography button {
-  color: #097179;
-  background-color: rgb(9, 113, 121, 0.3);
-  border: 0.1rem solid #097179;
-  border-radius: 5px;
-  padding: 1rem;
-}
+
 .skillsSection {
   display: flex;
-  width: 35vw;
+  width: 500px;
   padding: 1rem;
   background-color: white;
   border-radius: 5px;
 }
-
-.biography p {
-  margin: 1rem;
-}
-.biography button {
-  float: right;
-}
-
-.header {
-  display: flex;
-  border-bottom: 0.1rem solid #097179;
-  padding-bottom: 0.1rem;
-  font-family: "Montserrat-Medium";
-  font-style: normal;
-  font-weight: 500;
-  color: #097179;
-}
-
-.header h2 {
-  margin: 0 0 0 0.4rem;
-}
-
 
 @media screen and (width < 1075px) {
   .skillsSection {

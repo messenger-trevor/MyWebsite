@@ -32,10 +32,17 @@ const About = () => {
   return (
     <div className={classes.aboutSectionContainer}>
       <div className={classes.lineGraphic1}>
-        <span style={{ fontSize: "2.5em", padding: "100px", height: '400px'}}>
+        <span
+          style={{
+            fontSize: "2.5em",
+            height: "350px",
+            paddingRight: '100px',
+            width: "45vw",
+          }}
+        >
           <span
             style={{
-              width: '300px'
+              width: "300px",
             }}
           >
             A developer who gets&nbsp;
@@ -62,10 +69,11 @@ const About = () => {
           flexDirection: "column",
           direction: "rtl",
           overflow: "hidden",
+          
         }}
       >
         <div id="AboutMeLink" className={classes.sectionHeader}>
-          <h1>Skills</h1>
+          <h1 className={classes.skills}>Tech Stack</h1>
         </div>
         <div className={classes.skillsSection}>
           <PopulateChildrenDelayed>
@@ -81,6 +89,62 @@ const About = () => {
           </PopulateChildrenDelayed>
         </div>
       </div>
+      <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            overflow: "hidden",
+          }}
+        >
+          <div className={classes.sectionHeader}>
+            <h1 className={classes.Experience}>Experience</h1>
+          </div>
+          <div className={classes.skillsSection}>
+            <PopulateChildrenDelayed>
+              {logoData.map((logo) => {
+                return (
+                  <TechCard
+                    key={logo.index}
+                    image={logo.file}
+                    altText={logo.altText}
+                  />
+                );
+              })}
+            </PopulateChildrenDelayed>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            direction: "ltr",
+            overflow: "hidden",
+            width: "90vw",
+          }}
+        >
+          <div className={classes.sectionHeader}>
+            <h1 className={classes.about}>About</h1>
+          </div>
+          <div className={classes.skillsSection}>
+            <PopulateChildrenDelayed>
+              {logoData.map((logo) => {
+                return (
+                  <TechCard
+                    key={logo.index}
+                    image={logo.file}
+                    altText={logo.altText}
+                  />
+                );
+              })}
+            </PopulateChildrenDelayed>
+          </div>
+        </div>
+      </div>
+
       {/* <FlyInRight>
         <div className={classes.biography}>
           <div className={classes.header}>
