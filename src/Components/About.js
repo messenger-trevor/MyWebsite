@@ -1,5 +1,4 @@
 import classes from "./About.module.css";
-import profileIcon from "../Assets/profileIcon.svg";
 import TechCard from "./TechCard";
 import reactLogo from "../Assets/reactLogo.svg";
 import expressLogo from "../Assets/expressLogo.svg";
@@ -13,7 +12,6 @@ import CSSLogo from "../Assets/CSSLogo.svg";
 import FlyInLeft from "./AnimationWrappers/FlyInLeft";
 import FlyInRight from "./AnimationWrappers/FlyInRight";
 import PopulateChildrenDelayed from "./AnimationWrappers/PopulateChildrenDelayed";
-import Highlight from "./Highlight.js";
 import { TypeAnimation } from "react-type-animation";
 
 const About = () => {
