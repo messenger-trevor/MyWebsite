@@ -23,7 +23,7 @@ const HeroSection = () => {
           </h2>
           <div className={classes.buttonBar}>
             <button>
-              <img src={githubIcon} alt="Github Icon" />
+              <a href="https://github.com/messenger-trevor" target="_blank"><img src={githubIcon} alt="Github Icon" /></a>
             </button>
             <button>
               <img src={linkedInIcon} alt="LinkedIn Icon" />
