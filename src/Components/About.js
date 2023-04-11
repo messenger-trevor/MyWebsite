@@ -9,6 +9,7 @@ import mySQLLogo from "../Assets/mySQLLogo.svg";
 import javascriptLogo from "../Assets/javascriptLogo.svg";
 import HTMLLogo from "../Assets/HTML5Logo.svg";
 import CSSLogo from "../Assets/CSSLogo.svg";
+import walking from "../Assets/walkingIllustration.svg";
 import FlyInLeft from "./AnimationWrappers/FlyInLeft";
 import FlyInRight from "./AnimationWrappers/FlyInRight";
 import PopulateChildrenDelayed from "./AnimationWrappers/PopulateChildrenDelayed";
@@ -34,7 +35,7 @@ const About = () => {
           style={{
             fontSize: "2.5em",
             height: "350px",
-            paddingRight: '100px',
+            paddingRight: "100px",
             width: "45vw",
           }}
         >
@@ -67,7 +68,6 @@ const About = () => {
           flexDirection: "column",
           direction: "rtl",
           overflow: "hidden",
-          
         }}
       >
         <div id="AboutMeLink" className={classes.sectionHeader}>
@@ -97,49 +97,61 @@ const About = () => {
           }}
         >
           <div className={classes.sectionHeader}>
-            <h1 className={classes.Experience}>Experience</h1>
+            <h1 className={classes.Experience}>Certificates</h1>
           </div>
-          <div className={classes.skillsSection}>
+          <div className={classes.certifications}>
             <PopulateChildrenDelayed>
-              {logoData.map((logo) => {
-                return (
-                  <TechCard
-                    key={logo.index}
-                    image={logo.file}
-                    altText={logo.altText}
-                  />
-                );
-              })}
+              <ul>
+                <li>AWS Certified Practitioner</li>
+                <li>Comptia A+ and Project+</li>
+                <li>Axelos ITIL v4</li>
+              </ul>
             </PopulateChildrenDelayed>
           </div>
         </div>
       </div>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          direction: "ltr",
+          overflow: "hidden",
+        }}
+      >
         <div
           style={{
             display: "flex",
             flexDirection: "column",
             direction: "ltr",
             overflow: "hidden",
-            width: "90vw",
+            width: "40vw",
           }}
         >
           <div className={classes.sectionHeader}>
             <h1 className={classes.about}>About</h1>
           </div>
-          <div className={classes.skillsSection}>
-            <PopulateChildrenDelayed>
-              {logoData.map((logo) => {
-                return (
-                  <TechCard
-                    key={logo.index}
-                    image={logo.file}
-                    altText={logo.altText}
-                  />
-                );
-              })}
-            </PopulateChildrenDelayed>
+          <div className={classes.aboutText}>
+            <p>
+              Software Engineer with a theater and writing background -- It
+              seems difficult to find a developer these days thats can string a
+              sentence together just as well as a block of code. As someone with
+              extensive experience networking and marketing myself as a
+              professional actor and now helps tech companies market their
+              products, I take immense pride in my soft skills that allow me to
+              be a powerhouse collaborator and coworker.
+            </p>
+            <p>
+              I further built my technical skills with collaboration in mind,
+              and as a full stack developer I'm always interested in growing my
+              knowledge base so that even if I'm not fully involved in certain
+              aspects of a project, I've got my finger on the proverbial pulse
+              of the project. A jack of all trades, working to be a master in
+              them all.
+            </p>
           </div>
+        </div>
+        <div className={classes.graphichWithResume}>
+          <img src={walking} />
+          <button>Download Resume</button>
         </div>
       </div>
 
