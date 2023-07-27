@@ -1,7 +1,8 @@
 import classes from "./About.module.css";
 import TechCard from "./TechCard";
+import angularLogo from "../Assets/angular-svgrepo-com.svg";
 import reactLogo from "../Assets/reactLogo.svg";
-import expressLogo from "../Assets/expressLogo.svg";
+import springLogo from "../Assets/spring-svgrepo-com.svg";
 import nodeLogo from "../Assets/nodejsLogo.svg";
 import mongoDBLogo from "../Assets/mongoDBLogo.svg";
 import javaLogo from "../Assets/javaLogo.svg";
@@ -9,7 +10,7 @@ import mySQLLogo from "../Assets/mySQLLogo.svg";
 import javascriptLogo from "../Assets/javascriptLogo.svg";
 import HTMLLogo from "../Assets/HTML5Logo.svg";
 import CSSLogo from "../Assets/CSSLogo.svg";
-import walking from "../Assets/walkingIllustration.svg";
+import profilePic from "../Assets/profilePicture.jpg";
 import FlyInLeft from "./AnimationWrappers/FlyInLeft";
 import FlyInRight from "./AnimationWrappers/FlyInRight";
 import PopulateChildrenDelayed from "./AnimationWrappers/PopulateChildrenDelayed";
@@ -18,25 +19,26 @@ import { TypeAnimation } from "react-type-animation";
 const About = () => {
   const logoData = [
     { index: 0, file: reactLogo, altText: "React Logo" },
-    { index: 1, file: expressLogo, altText: "Express.js Logo" },
-    { index: 2, file: nodeLogo, altText: "Node.js Logo" },
-    { index: 3, file: mongoDBLogo, altText: "MongoDB Logo" },
-    { index: 4, file: javaLogo, altText: "Java Logo" },
-    { index: 5, file: mySQLLogo, altText: "MySQL Logo" },
-    { index: 6, file: javascriptLogo, altText: "JavaScript Logo" },
-    { index: 7, file: HTMLLogo, altText: "HTML Logo" },
-    { index: 8, file: CSSLogo, altText: "CSS Logo" },
+    { index: 1, file: angularLogo, altText: "Angular Logo" },
+    { index: 2, file: springLogo, altText: "Spring Logo" },
+    { index: 3, file: nodeLogo, altText: "Node.js Logo" },
+    { index: 4, file: mongoDBLogo, altText: "MongoDB Logo" },
+    { index: 5, file: javaLogo, altText: "Java Logo" },
+    { index: 6, file: mySQLLogo, altText: "MySQL Logo" },
+    { index: 7, file: javascriptLogo, altText: "JavaScript Logo" },
+    { index: 8, file: HTMLLogo, altText: "HTML Logo" },
+    { index: 9, file: CSSLogo, altText: "CSS Logo" },
   ];
 
   return (
-    <div className={classes.aboutSectionContainer}>
+    <div className={classes.aboutSectionContainer} id="AboutMeLink">
       <div className={classes.lineGraphic1}>
         <span
           style={{
             fontSize: "2.5em",
             height: "350px",
-            paddingRight: "100px",
-            width: "45vw",
+            minWidth: "500px",
+            paddingBottom: "15px",
           }}
         >
           <span
@@ -47,7 +49,11 @@ const About = () => {
             A developer who gets&nbsp;
           </span>
           <TypeAnimation
-            style={{ whiteSpace: "pre-line", width: "500px", height: "280px" }}
+            style={{
+              whiteSpace: "pre-line",
+              width: "500px",
+              height: "280px",
+            }}
             sequence={[
               "frontend",
               1000,
@@ -66,11 +72,12 @@ const About = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          direction: "rtl",
+          alignItems: "center",
           overflow: "hidden",
+          width: "500px",
         }}
       >
-        <div id="AboutMeLink" className={classes.sectionHeader}>
+        <div className={classes.sectionHeader}>
           <h1 className={classes.skills}>Tech Stack</h1>
         </div>
         <div className={classes.skillsSection}>
@@ -87,17 +94,18 @@ const About = () => {
           </PopulateChildrenDelayed>
         </div>
       </div>
-      <div>
+
+      {/* <div>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            direction: "rtl",
             overflow: "hidden",
           }}
         >
           <div className={classes.sectionHeader}>
-            <h1 className={classes.Experience}>Certificates</h1>
+            <h1 className={classes.skills}>Certificates</h1>
           </div>
           <div className={classes.certifications}>
             <PopulateChildrenDelayed>
@@ -109,49 +117,51 @@ const About = () => {
             </PopulateChildrenDelayed>
           </div>
         </div>
-      </div>
+      </div> */}
+
       <div
         style={{
           display: "flex",
+          flexDirection: "column",
           direction: "ltr",
+          alignItems: "center",
           overflow: "hidden",
+          width: "500px",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            direction: "ltr",
-            overflow: "hidden",
-            width: "40vw",
-          }}
-        >
-          <div className={classes.sectionHeader}>
-            <h1 className={classes.about}>About</h1>
-          </div>
-          <div className={classes.aboutText}>
-            <p>
-              Software Engineer with a theater and writing background -- It
-              seems difficult to find a developer these days thats can string a
-              sentence together just as well as a block of code. As someone with
-              extensive experience networking and marketing myself as a
-              professional actor and now helps tech companies market their
-              products, I take immense pride in my soft skills that allow me to
-              be a powerhouse collaborator and coworker.
-            </p>
-            <p>
-              I further built my technical skills with collaboration in mind,
-              and as a full stack developer I'm always interested in growing my
-              knowledge base so that even if I'm not fully involved in certain
-              aspects of a project, I've got my finger on the proverbial pulse
-              of the project. A jack of all trades, working to be a master in
-              them all.
-            </p>
-          </div>
+        <div className={classes.sectionHeader}>
+          <h1 className={classes.about}>About</h1>
+        </div>
+        <iframe src="https://drive.google.com/file/d/1FkxAqCRug7FC2ZyfmfdnybKBgBRePbyM/preview" width= "500px" height="650px" allow="autoplay"></iframe>
+        <div className={classes.aboutText}>
+          <p>
+            {/* I work in Java and Spring, React and Angular, and many of the modern
+            industry-standard technologies and frameworks that support these
+            languages. I am always trying to learn new technologies, and I'm
+            currently seeking my first professional opportunity that will allow
+            me grow as a developer. I'm always down to meet new people and
+            connect, so please reach out! */}
+            {/* Software Engineer with a theater and writing background -- It seems
+            difficult to find a developer these days thats can string a sentence
+            together just as well as a block of code. As someone with extensive
+            experience networking and marketing myself as a professional actor
+            and now helps tech companies market their products, I take immense
+            pride in my soft skills that allow me to be a powerhouse
+            collaborator and coworker. */}
+          </p>
+          {/* <p>
+            I further built my technical skills with collaboration in mind, and
+            as a full stack developer I'm always interested in growing my
+            knowledge base so that even if I'm not fully involved in certain
+            aspects of a project, I've got my finger on the proverbial pulse of
+            the project. A jack of all trades, working to be a master in them
+            all.
+          </p> */}
         </div>
         <div className={classes.graphichWithResume}>
-          <img src={walking} />
-          <button>Download Resume</button>
+          <img src={profilePic} />
+          {/* dont think this resume button is needed here
+          <button>Download Resume</button> */}
         </div>
       </div>
 

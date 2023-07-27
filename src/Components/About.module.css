@@ -2,7 +2,8 @@
   font-family: "Montserrat-Medium";
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
   border-top: 0.1rem solid #097179;
   padding: 5%;
@@ -16,7 +17,6 @@
 .sectionHeader {
   padding: 0;
   margin: 0;
-  width: 40vw;
   background: transparent;
 }
 .sectionHeader h1 {
@@ -24,10 +24,14 @@
   font-family: "Montserrat-Medium";
   color: black;
   font-size: 80px;
+  width: 30vw;
+}
+p {
+  font-size: larger;
 }
 .skills {
-  text-align: right;
-  background: linear-gradient(#e8986b, #e8986b) bottom right/67% 45%;
+  text-align: center;
+  background: linear-gradient(#e8986b, #e8986b) bottom right/100% 45%;
   background-position: left 100% top 100%;
   background-repeat: no-repeat;
 }
@@ -38,16 +42,16 @@
   text-align: center;
 }
 .about {
-  background: linear-gradient(#e8986b, #e8986b) bottom left/67% 45%;
-  background-position: right 100% top 100%;
+  text-align: center;
+  background: linear-gradient(#e8986b, #e8986b) bottom right/100% 45%;
+  background-position: left 100% top 100%;
   background-repeat: no-repeat;
-  width: 800px;
+  
 }
 
 
 .skillsSection {
   display: flex;
-  width: 500px;
   padding: 1rem;
   background-color: white;
   border-radius: 5px;
@@ -62,16 +66,15 @@
   font-size: 1.5em;
 }
 
-.graphichWithResume {
-  width: 50vw;
+/* .graphichWithResume {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+} */
 .graphichWithResume img {
-  width: 250px;
-  margin-bottom: 50px;
+  width: 350px;
+  align-items: center;
 }
 
 @media screen and (width < 1075px) {

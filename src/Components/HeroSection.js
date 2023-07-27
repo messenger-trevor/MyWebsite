@@ -26,7 +26,7 @@ const HeroSection = () => {
               <a href="https://github.com/messenger-trevor" target="_blank" rel="noreferrer"><img src={githubIcon} alt="Github Icon" /></a>
             </button>
             <button>
-              <img src={linkedInIcon} alt="LinkedIn Icon" />
+              <a href="https://www.linkedin.com/in/trevor-messenger/" target="_blank" rel="noreferrer"><img  src={linkedInIcon} alt="LinkedIn Icon" /></a>
             </button>
           </div>
         </div>
