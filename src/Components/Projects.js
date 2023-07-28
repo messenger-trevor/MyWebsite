@@ -29,21 +29,28 @@ import FlyInRight from "./AnimationWrappers/FlyInRight";
 
 const Projects = () => {
   return (
-    <div className={classes.projectsSection}>
-      <h1 className={classes.sectionHeader} id="WorkLink">
-        My Work
-      </h1>
-      <div className={classes.projectsCardsContainer}>
-        <FlyInLeft>
-          <ProjectCards />
-        </FlyInLeft>
-        <FlyInBottom>
-          <ProjectCards />
-        </FlyInBottom>
-        <FlyInRight>
-          <ProjectCards />
-        </FlyInRight>
-        
+    <div className={classes.projectsSection} id="WorkLink">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          direction: "ltr",
+          alignItems: "center",
+          overflow: "hidden",
+        }}
+      >
+        <h1 className={classes.sectionHeader}>My Work</h1>
+        <div className={classes.projectsCardsContainer}>
+          <FlyInLeft>
+            <ProjectCards />
+          </FlyInLeft>
+          <FlyInBottom>
+            <ProjectCards />
+          </FlyInBottom>
+          <FlyInRight>
+            <ProjectCards />
+          </FlyInRight>
+        </div>
       </div>
     </div>
   );

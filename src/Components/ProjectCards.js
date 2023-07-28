@@ -69,7 +69,7 @@ export default function ProjectCards() {
         //     <MoreVertIcon />
         //   </IconButton>
         // }
-        title="DM Masters Mode"
+        title="Game of the Month (In-Progress)"
         subheader="Full-Stack Web Application"
         subheaderTypographyProps={{ color: "#097179" }}
       />
@@ -81,8 +81,7 @@ export default function ProjectCards() {
       />
       <CardContent>
         <Typography variant="body1" color="#097179">
-          DM Masters Mode. Web Application for Creating Masterful TTRPG
-          Settings.
+           Java, Spring, Node.js, React, Postgres
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -104,10 +103,10 @@ export default function ProjectCards() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography paragraph>Description:</Typography>
           <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-            set aside for 10 minutes.
+            "Game of the Month" is an open-source social server for friendgroups to discuss and decide which games to play together each month. 
+            I'm working with a designer currently for UI/UX, but will begin backend development shortly, keep an eye on my github in the meantime.
           </Typography>
         </CardContent>
       </Collapse>

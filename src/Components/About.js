@@ -118,7 +118,7 @@ const About = () => {
           </div>
         </div>
       </div> */}
-
+      
       <div
         style={{
           display: "flex",
@@ -126,13 +126,13 @@ const About = () => {
           direction: "ltr",
           alignItems: "center",
           overflow: "hidden",
-          width: "500px",
+          // width: "500px",
         }}
       >
         <div className={classes.sectionHeader}>
           <h1 className={classes.about}>About</h1>
         </div>
-        <iframe src="https://drive.google.com/file/d/1FkxAqCRug7FC2ZyfmfdnybKBgBRePbyM/preview" width= "500px" height="650px" allow="autoplay"></iframe>
+        <PopulateChildrenDelayed>
         <div className={classes.aboutText}>
           <p>
             {/* I work in Java and Spring, React and Angular, and many of the modern
@@ -160,11 +160,24 @@ const About = () => {
         </div>
         <div className={classes.graphichWithResume}>
           <img src={profilePic} />
+          <p>
+            <b>-- Software Engineer with a Technical Writing Background --</b>{" "}
+            <br /> <br /> It seems difficult to find a developer these days
+            thats can string a sentence together just as well as a block of
+            code. As someone with extensive experience networking as a
+            professional performer and now helps tech companies market their
+            products, I take immense pride in my soft skills that allow me to be
+            a powerhouse collaborator and coworker.
+            <br /> <br /> My dream is to ultimately become a Solutions
+            Architect, allowing me to mix a large assortment of techinical
+            skills with my love of people.
+          </p>
           {/* dont think this resume button is needed here
           <button>Download Resume</button> */}
         </div>
+        </PopulateChildrenDelayed>
       </div>
-
+      
       {/* <FlyInRight>
         <div className={classes.biography}>
           <div className={classes.header}>
