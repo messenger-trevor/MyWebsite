@@ -6,14 +6,14 @@
   align-items: center;
   background-color: white;
   border-top: 0.1rem solid #097179;
-  padding: 5%;
+  padding: 15%;
 }
 
 .sectionHeader {
   padding: 0;
   padding-left: 5%;
   padding-right: 5%;
-  margin: 0;
+  margin-bottom: 15%;
   text-align: center;
   background: linear-gradient(#e8986b, #e8986b) bottom right/110% 45%;
   background-position: left 100% top 100%;

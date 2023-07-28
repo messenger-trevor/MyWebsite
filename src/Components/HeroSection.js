@@ -1,6 +1,6 @@
 import githubIcon from "../Assets/icon_github.svg";
 import linkedInIcon from "../Assets/icon_linkedIn.svg";
-import illustrationOfSelf from "../Assets/IllustrationOfSelf.svg";
+import illustrationOfSelf from "../Assets/codingIllustration.png";
 import classes from "./HeroSection.module.css";
 import FlyInLeft from "./AnimationWrappers/FlyInLeft";
 import FlyInRight from "./AnimationWrappers/FlyInRight";
