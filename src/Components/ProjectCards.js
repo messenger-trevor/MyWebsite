@@ -9,7 +9,12 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { Language, GitHub, HourglassEmpty, HourglassBottom, HourglassFull, HourglassTop } from "@mui/icons-material";
+import {
+  Language,
+  GitHub,
+  AssignmentTwoTone
+  
+} from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import dummyProjectOne from "../Assets/dummyProjectOne.jpg";
 import { createTheme } from "@mui/material/styles";
@@ -18,6 +23,7 @@ import { Icon } from "@mui/material";
 import { width } from "@mui/system";
 
 
+// theming and config data for creating button animations
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -29,6 +35,8 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+
+// unused theme underdevelopment
 const theme = createTheme({
   status: {
     danger: "#e53e3e",
@@ -45,12 +53,22 @@ const theme = createTheme({
   },
 });
 
-export default function ProjectCards() {
+export default function ProjectCards(props) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  
+  var hasGit = false;
+  var hasLiveSite = false;
+  if (props.gitHub != 0) {
+
+    hasGit = true;
+  }
+  if (props.liveSite != 0) {
+    hasLiveSite = true;
+  }
 
   return (
     <Card
@@ -61,37 +79,38 @@ export default function ProjectCards() {
       ]}
     >
       <CardHeader
-        avatar={
-            <HourglassEmpty />
-        }
-        // action={
-        //   <IconButton aria-label="settings">
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
-        title="Game of the Month (In-Progress)"
-        subheader="Full-Stack Web Application"
+        avatar={<AssignmentTwoTone />}
+        title={props.projectName}
+        subheader={props.subheader}
         subheaderTypographyProps={{ color: "#097179" }}
       />
       <CardMedia
         component="img"
-        height="194"
-        image={dummyProjectOne}
+        height="250"
+        image={props.image}
         alt="Project Unspash Image"
       />
       <CardContent>
         <Typography variant="body1" color="#097179">
-           Java, Spring, Node.js, React, Postgres
+          {props.techStack}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="Code Repository">
-          <GitHub sx={{ color: "#097179" }} />
-        </IconButton>
+        {hasGit && (
+          <a href={props.gitHub} target="_blank">
+          <IconButton  aria-label="Code Repository">
+            <GitHub sx={{ color: "#097179" }} />
+          </IconButton>
+          </a>
+        )}
 
-        <IconButton aria-label="Live Site">
-          <Language sx={{ color: "#097179" }} />
-        </IconButton>
+        {hasLiveSite && (
+          <a href={props.liveSite} target="_blank">
+          <IconButton href={props.liveSite} aria-label="Live Site">
+            <Language sx={{ color: "#097179" }} />
+          </IconButton>
+          </a>
+        )}
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -104,10 +123,7 @@ export default function ProjectCards() {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Description:</Typography>
-          <Typography paragraph>
-            "Game of the Month" is an open-source social server for friendgroups to discuss and decide which games to play together each month. 
-            I'm working with a designer currently for UI/UX, but will begin backend development shortly, keep an eye on my github in the meantime.
-          </Typography>
+          <Typography paragraph>{props.description}</Typography>
         </CardContent>
       </Collapse>
     </Card>
