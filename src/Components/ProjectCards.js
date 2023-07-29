@@ -6,24 +6,18 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
-import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import {
   Language,
   GitHub,
   AssignmentTwoTone
-  
 } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import dummyProjectOne from "../Assets/dummyProjectOne.jpg";
-import { createTheme } from "@mui/material/styles";
-import materialuiLogo from "../Assets/materialuLogo.svg";
-import { Icon } from "@mui/material";
-import { width } from "@mui/system";
+// import { createTheme } from "@mui/material/styles";
 
 
-// theming and config data for creating button animations
+// animations for card expanse
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -37,21 +31,21 @@ const ExpandMore = styled((props) => {
 
 
 // unused theme underdevelopment
-const theme = createTheme({
-  status: {
-    danger: "#e53e3e",
-  },
-  palette: {
-    primary: {
-      main: "#0971f1",
-      darker: "#053e85",
-    },
-    neutral: {
-      main: "#64748B",
-      contrastText: "#fff",
-    },
-  },
-});
+// const theme = createTheme({
+//   status: {
+//     danger: "#e53e3e",
+//   },
+//   palette: {
+//     primary: {
+//       main: "#0971f1",
+//       darker: "#053e85",
+//     },
+//     neutral: {
+//       main: "#64748B",
+//       contrastText: "#fff",
+//     },
+//   },
+// });
 
 export default function ProjectCards(props) {
   const [expanded, setExpanded] = React.useState(false);
