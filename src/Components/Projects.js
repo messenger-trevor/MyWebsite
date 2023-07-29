@@ -1,5 +1,6 @@
 // import { useState, useRef } from "react";
 // import { motion } from "framer-motion";
+import { Element } from "react-scroll";
 import classes from "./Projects.module.css";
 import ProjectCards from "./ProjectCards";
 import FlyInBottom from "./AnimationWrappers/FlyInBottom";
@@ -30,6 +31,7 @@ import FlyInRight from "./AnimationWrappers/FlyInRight";
 const Projects = () => {
   return (
     <div className={classes.projectsSection} id="WorkLink">
+      <Element name="projectDestination" className="projectDestination" />
       <div
         style={{
           display: "flex",

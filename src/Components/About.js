@@ -15,6 +15,7 @@ import FlyInLeft from "./AnimationWrappers/FlyInLeft";
 import FlyInRight from "./AnimationWrappers/FlyInRight";
 import PopulateChildrenDelayed from "./AnimationWrappers/PopulateChildrenDelayed";
 import { TypeAnimation } from "react-type-animation";
+import { Element } from "react-scroll";
 
 const About = () => {
   const logoData = [
@@ -32,6 +33,7 @@ const About = () => {
 
   return (
     <div className={classes.aboutSectionContainer} id="AboutMeLink">
+      <Element name="aboutDestination" className="element"/>
       <div className={classes.lineGraphic1}>
         <span
           style={{

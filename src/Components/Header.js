@@ -1,6 +1,15 @@
 // import { useScroll, motion } from "framer-motion";
 // import { useTransform } from "framer-motion";
 import { useState } from "react";
+import {
+  Link,
+  DirectLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 import classes from "./Header.module.css";
 import { Twirl as Hamburger } from "hamburger-react";
@@ -11,20 +20,71 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const mediaQuery = useMediaQuery("(min-width:775px)");
 
-  
+  function componentDidMount() {
+    Events.scrollEvent.register("begin", function (to, element) {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register("end", function (to, element) {
+      console.log("end", arguments);
+    });
+
+    scrollSpy.update();
+  }
+  function componentWillUnmount() {
+    Events.scrollEvent.remove("begin");
+    Events.scrollEvent.remove("end");
+  }
+  function scrollTo() {
+    scroller.scrollTo("scroll-to-element", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  }
 
   return (
     <>
-      <div className={menuOpen?classes.pulloutMenu:classes.pulloutMenuClosed} >
+      <div
+        className={menuOpen ? classes.pulloutMenu : classes.pulloutMenuClosed}
+      >
         <ul>
           <li>
-            <a href="#AboutMeLink">About Me</a>
+            <Link
+              activeClass="active"
+              className="aboutLink"
+              to="aboutDestination"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              About Me
+            </Link>
           </li>
           <li>
-            <a href="#WorkLink">My Work</a>
+            <Link
+              activeClass="active"
+              className="projectLink"
+              to="projectDestination"
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={50}
+            >
+              My Work
+            </Link>
           </li>
           <li>
-            <a href="#ContactLink">Contact</a>
+            <Link
+              activeClass="active"
+              className="contactLink"
+              to="contactDestination"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
@@ -49,13 +109,41 @@ const Header = () => {
             {mediaQuery && (
               <>
                 <li>
-                  <a href="#AboutMeLink">About Me</a>
+                  <Link
+                    activeClass="active"
+                    className="aboutLink"
+                    to="aboutDestination"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                  >
+                    About Me
+                  </Link>
                 </li>
                 <li>
-                  <a href="#WorkLink">My Work</a>
+                  <Link
+                    activeClass="active"
+                    className="projectLink"
+                    to="projectDestination"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    offset={-150}
+                  >
+                    My Work
+                  </Link>
                 </li>
                 <li>
-                  <a href="#ContactLink">Contact</a>
+                  <Link
+                    activeClass="active"
+                    className="contactLink"
+                    to="contactDestination"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                  >
+                    Contact
+                  </Link>
                 </li>
               </>
             )}
