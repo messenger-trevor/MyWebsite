@@ -1,21 +1,24 @@
 import { useState } from "react";
-import { Box, createTheme, TextField, Button, CardHeader } from "@mui/material";
+import { Box, createTheme, TextField, Button} from "@mui/material";
 import { Send } from "@mui/icons-material";
 import classes from "./Contact.module.css";
 import { ThemeProvider } from "@emotion/react";
 import { Element } from "react-scroll";
 
 const Contact = (props) => {
+  //state logic for updating and storing contact fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  //theme for contact card background color
   const theme = createTheme({
     palette: {
       background: { paper: "#fff" },
     }
   });
 
+  // prevents default on click submit handling and currently logs data to console
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -23,6 +26,13 @@ const Contact = (props) => {
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Message:", message);
+
+    //constructs the json package to be sent with post request
+    const postPackage = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({name, email, message})
+    };
 
     // Resets the form
     setName("");

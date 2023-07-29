@@ -1,14 +1,8 @@
-// import { useState, useRef } from "react";
-// import { motion } from "framer-motion";
 import { Element } from "react-scroll";
 import classes from "./Projects.module.css";
 import ProjectCards from "./ProjectCards";
 import schoolProjectImage from "../Assets/marvin-meyer-SYTO3xs06fU-unsplash.jpg"
 import inProgressImage from "../Assets/dummyProjectOne.jpg"
-// import FlyInBottom from "./AnimationWrappers/FlyInBottom";
-// import FlyInLeft from "./AnimationWrappers/FlyInLeft";
-// import FlyInRight from "./AnimationWrappers/FlyInRight";
-
 
 // data for populating project cards, **gitHub and liveSite must be valid urls, or 0 to indicate null**
 const projectData = [

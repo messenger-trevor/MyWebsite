@@ -17,7 +17,9 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const mediaQuery = useMediaQuery("(min-width:775px)");
 
-  // supporting logic for scroll animations
+  // supporting logic for scroll animations to be added later, currently unused
+  //
+  //
   // function componentDidMount() {
   //   Events.scrollEvent.register("begin", function (to, element) {
   //     console.log("begin", arguments);
@@ -29,10 +31,12 @@ const Header = () => {
 
   //   scrollSpy.update();
   // }
-  function componentWillUnmount() {
-    Events.scrollEvent.remove("begin");
-    Events.scrollEvent.remove("end");
-  }
+  // function componentWillUnmount() {
+  //   Events.scrollEvent.remove("begin");
+  //   Events.scrollEvent.remove("end");
+  // }
+
+  //current scroll animation logic, react-scroll library
   function scrollTo() {
     scroller.scrollTo("scroll-to-element", {
       duration: 800,
