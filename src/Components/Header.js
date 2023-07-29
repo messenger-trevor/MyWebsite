@@ -69,7 +69,6 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={50}
             >
               My Work
             </Link>
@@ -116,6 +115,7 @@ const Header = () => {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    offset={150}
                   >
                     About Me
                   </Link>

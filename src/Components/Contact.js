@@ -3,6 +3,7 @@ import { Box, createTheme, TextField, Button, CardHeader } from "@mui/material";
 import { Send } from "@mui/icons-material";
 import classes from "./Contact.module.css";
 import { ThemeProvider } from "@emotion/react";
+import { Element } from "react-scroll";
 
 const Contact = (props) => {
   const [name, setName] = useState("");
@@ -31,6 +32,7 @@ const Contact = (props) => {
 
   return (
     <div className={classes.contactSectionContainer}>
+      <Element name="contactDestination" />
       <div
         style={{
           display: "flex",

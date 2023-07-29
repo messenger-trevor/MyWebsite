@@ -33,7 +33,6 @@ const About = () => {
 
   return (
     <div className={classes.aboutSectionContainer} id="AboutMeLink">
-      <Element name="aboutDestination" className="element"/>
       <div className={classes.lineGraphic1}>
         <span
           style={{
@@ -69,6 +68,7 @@ const About = () => {
             repeat={Infinity}
           />
         </span>
+        <Element name="aboutDestination"/>
       </div>
       <div
         style={{
