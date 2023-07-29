@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, createTheme, TextField, Button} from "@mui/material";
+import { Box, createTheme, TextField, Button } from "@mui/material";
 import { Send } from "@mui/icons-material";
 import classes from "./Contact.module.css";
 import { ThemeProvider } from "@emotion/react";
@@ -15,7 +15,7 @@ const Contact = (props) => {
   const theme = createTheme({
     palette: {
       background: { paper: "#fff" },
-    }
+    },
   });
 
   // prevents default on click submit handling and currently logs data to console
@@ -29,10 +29,16 @@ const Contact = (props) => {
 
     //constructs the json package to be sent with post request
     const postPackage = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({name, email, message})
+      Name: name,
+      Email: email,
+      Message: message
     };
+
+    fetch("http://172.29.160.1:8080/api/email", {
+    method: 'POST',
+    mode: 'cors',
+    body: JSON.stringify(postPackage)});
+      
 
     // Resets the form
     setName("");
@@ -51,63 +57,63 @@ const Contact = (props) => {
           alignItems: "center",
           overflow: "hidden",
           // width: "500px",
-        }}>
-      <h1 id="ContactLink" className={classes.sectionHeader}>
-        Contact Me
-      </h1>
-      <ThemeProvider theme={theme}>
-        <Box 
-          component="form"
-          onSubmit={handleSubmit}
-          sx={{
-            bgcolor: "background.paper",
-            border: ".1rem solid #097179",
-            borderRadius: 2,
-            p: 2,
-          }}
-        >
-          <h2>Get In Touch</h2>
-          <TextField
-            fullWidth
-            value={name}
-            onChange={(event) => {
-              setName(event.target.value);
+        }}
+      >
+        <h1 id="ContactLink" className={classes.sectionHeader}>
+          Contact Me
+        </h1>
+        <ThemeProvider theme={theme}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{
+              bgcolor: "background.paper",
+              border: ".1rem solid #097179",
+              borderRadius: 2,
+              p: 2,
             }}
-            label="Name"
-            id="name"
-            margin="normal"
-          />
-          <TextField
-            fullWidth
-            value={email}
-            onChange={(event) => {
-              setEmail(event.target.value);
-            }}
-            label="Email"
-            id="email"
-            margin="normal"
-          />
-          <TextField
-            fullWidth
-            value={message}
-            onChange={(event) => {
-              setMessage(event.target.value);
-            }}
-            multiline
-            rows={4}
-            label="Message"
-            id="message"
-            margin="normal"
-          />
-          <Button type="submit" variant="contained" endIcon={<Send />}>
-            Send
-          </Button>
-        </Box>
-      </ThemeProvider>
+          >
+            <h2>Get In Touch</h2>
+            <TextField
+              fullWidth
+              value={name}
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+              label="Name"
+              id="name"
+              margin="normal"
+            />
+            <TextField
+              fullWidth
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+              label="Email"
+              id="email"
+              margin="normal"
+            />
+            <TextField
+              fullWidth
+              value={message}
+              onChange={(event) => {
+                setMessage(event.target.value);
+              }}
+              multiline
+              rows={4}
+              label="Message"
+              id="message"
+              margin="normal"
+            />
+            <Button type="submit" variant="contained" endIcon={<Send />}>
+              Send
+            </Button>
+          </Box>
+        </ThemeProvider>
       </div>
     </div>
   );
 };
 
 export default Contact;
-
