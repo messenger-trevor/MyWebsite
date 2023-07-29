@@ -12,7 +12,6 @@ const TechCard = (props) => {
   return (
     <motion.img
       className={classes.techCard}
-      key={props.key}
       src={props.image}
       alt={props.altText}
       title={props.altText}

@@ -120,7 +120,7 @@ const About = () => {
           </div>
         </div>
       </div> */}
-      
+
       <div
         style={{
           display: "flex",
@@ -134,52 +134,27 @@ const About = () => {
         <div className={classes.sectionHeader}>
           <h1 className={classes.about}>About</h1>
         </div>
-        <PopulateChildrenDelayed>
-        <div className={classes.aboutText}>
-          <p>
-            {/* I work in Java and Spring, React and Angular, and many of the modern
-            industry-standard technologies and frameworks that support these
-            languages. I am always trying to learn new technologies, and I'm
-            currently seeking my first professional opportunity that will allow
-            me grow as a developer. I'm always down to meet new people and
-            connect, so please reach out! */}
-            {/* Software Engineer with a theater and writing background -- It seems
-            difficult to find a developer these days thats can string a sentence
-            together just as well as a block of code. As someone with extensive
-            experience networking and marketing myself as a professional actor
-            and now helps tech companies market their products, I take immense
-            pride in my soft skills that allow me to be a powerhouse
-            collaborator and coworker. */}
-          </p>
-          {/* <p>
-            I further built my technical skills with collaboration in mind, and
-            as a full stack developer I'm always interested in growing my
-            knowledge base so that even if I'm not fully involved in certain
-            aspects of a project, I've got my finger on the proverbial pulse of
-            the project. A jack of all trades, working to be a master in them
-            all.
-          </p> */}
-        </div>
-        <div className={classes.graphichWithResume}>
-          <img src={profilePic} />
-          <p>
-            <b>-- Software Engineer with a Technical Writing Background --</b>{" "}
-            <br /> <br /> It seems difficult to find a developer these days
-            thats can string a sentence together just as well as a block of
-            code. As someone with extensive experience networking as a
-            professional performer and now helps tech companies market their
-            products, I take immense pride in my soft skills that allow me to be
-            a powerhouse collaborator and coworker.
-            <br /> <br /> My dream is to ultimately become a Solutions
-            Architect, allowing me to mix a large assortment of techinical
-            skills with my love of people.
-          </p>
-          {/* dont think this resume button is needed here
-          <button>Download Resume</button> */}
-        </div>
-        </PopulateChildrenDelayed>
+          <div className={classes.graphichWithResume}>
+            <img src={profilePic} />
+            <h2>
+              {" "}
+              Software Engineer with a Technical Writing Background{" "}
+            </h2>{" "}
+          </div>
+          <div className={classes.aboutSectionText}>
+              {" "}
+              It seems difficult to find a developer these days thats can string
+              a sentence together just as well as a block of code. As someone
+              with extensive experience networking as a professional performer
+              and now helps tech companies market their products, I take immense
+              pride in my soft skills that allow me to be a powerhouse
+              collaborator and coworker.
+              <br /> <br /> My dream is to ultimately become a Solutions
+              Architect, allowing me to mix my techinical skills with my love of
+              people.{" "}
+            </div>
       </div>
-      
+
       {/* <FlyInRight>
         <div className={classes.biography}>
           <div className={classes.header}>
