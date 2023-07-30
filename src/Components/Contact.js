@@ -4,12 +4,15 @@ import { Send } from "@mui/icons-material";
 import classes from "./Contact.module.css";
 import { ThemeProvider } from "@emotion/react";
 import { Element } from "react-scroll";
+import SubmissionPopup from "./SubmissionPopup"
 
 const Contact = (props) => {
   //state logic for updating and storing contact fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const [isSubmissionPopupOpen, setIsSubmissionPopupOpen] = useState(false);
 
   //theme for contact card background color
   const theme = createTheme({
@@ -34,13 +37,13 @@ const Contact = (props) => {
       Message: message
     };
 
-    fetch("", {
-    method: 'POST',
-    mode: 'cors',
-    body: JSON.stringify(postPackage)});
-      
+    console.log(postPackage);
 
+    setIsSubmissionPopupOpen(true);
+
+    
     // Resets the form
+    
     setName("");
     setEmail("");
     setMessage("");
@@ -110,6 +113,10 @@ const Contact = (props) => {
               Send
             </Button>
           </Box>
+          <SubmissionPopup
+          open={isSubmissionPopupOpen}
+          onClose={() => setIsSubmissionPopupOpen(false)}
+        />
         </ThemeProvider>
       </div>
     </div>
