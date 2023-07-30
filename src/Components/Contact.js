@@ -34,7 +34,7 @@ const Contact = (props) => {
       Message: message
     };
 
-    fetch("http://172.29.160.1:8080/api/email", {
+    fetch("", {
     method: 'POST',
     mode: 'cors',
     body: JSON.stringify(postPackage)});
