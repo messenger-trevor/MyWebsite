@@ -33,21 +33,8 @@ const About = () => {
   return (
     <div className={classes.aboutSectionContainer} id="AboutMeLink">
       <div className={classes.lineGraphic1}>
-        <span
-          style={{
-            fontSize: "2.5em",
-            height: "350px",
-            minWidth: "500px",
-            paddingBottom: "15px",
-          }}
-        >
-          <span
-            style={{
-              width: "300px",
-            }}
-          >
-            A developer who gets&nbsp;
-          </span>
+        <span className={classes.lineGraphicSpan}>
+          <span>A developer who gets&nbsp;</span>
           <TypeAnimation
             style={{
               whiteSpace: "pre-line",
@@ -67,14 +54,13 @@ const About = () => {
             repeat={Infinity}
           />
         </span>
-        <Element name="aboutDestination"/>
+        <Element name="aboutDestination" />
       </div>
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          overflow: "hidden",
           width: "500px",
         }}
       >
@@ -107,25 +93,21 @@ const About = () => {
         <div className={classes.sectionHeader}>
           <h1 className={classes.about}>About</h1>
         </div>
-          <div className={classes.graphichWithResume}>
-            <img src={profilePic} />
-            <h2>
-              {" "}
-              Software Engineer with a Technical Writing Background{" "}
-            </h2>{" "}
-          </div>
-          <div className={classes.aboutSectionText}>
-              {" "}
-              It seems difficult to find a developer these days thats can string
-              a sentence together just as well as a block of code. As someone
-              with extensive experience networking as a professional performer
-              and now helps tech companies market their products, I take immense
-              pride in my soft skills that allow me to be a powerhouse
-              collaborator and coworker.
-              <br /> <br /> My dream is to ultimately become a Solutions
-              Architect, allowing me to mix my techinical skills with my love of
-              people.{" "}
-            </div>
+        <div className={classes.graphichWithResume}>
+          <img src={profilePic} />
+          <h2> Software Engineer with a Technical Writing Background </h2>{" "}
+        </div>
+        <div className={classes.aboutSectionText}>
+          {" "}
+          It seems difficult to find a developer these days thats can string a
+          sentence together just as well as a block of code. As someone with
+          extensive experience networking as a professional performer and now
+          helps tech companies market their products, I take immense pride in my
+          soft skills that allow me to be a powerhouse collaborator and
+          coworker.
+          <br /> <br /> My dream is to ultimately become a Solutions Architect,
+          allowing me to mix my techinical skills with my love of people.{" "}
+        </div>
       </div>
     </div>
   );

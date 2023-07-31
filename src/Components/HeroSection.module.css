@@ -127,3 +127,21 @@
   
   }
 }
+
+@media screen and (width < 500px) { 
+  .graphic{
+    height: 200px;
+    width: 300px;
+  }
+  .landingSectionText h2 {
+    font-weight: 100;
+    font-size: 1rem;
+  } 
+  .landingSectionText h1 {
+    
+    
+    font-size: 3rem;
+    
+  
+  }
+}

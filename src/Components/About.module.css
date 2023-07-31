@@ -85,11 +85,54 @@
   transform: translateX(-50px);
 }
 
-@media screen and (width < 1075px) {
+.lineGraphicSpan {
+    font-size: 2.5em;
+    height: 350px;
+    min-width: 500px;
+    padding-bottom: 15px;
+  
+}
+
+@media screen and (width < 950px) { 
+
+  
+  .graphichWithResume h2 {
+    display: none;
+  }
+  
+  .aboutSectionText {
+    max-width: 400px;
+    font-size: 15px;
+    line-height: 37px;
+  
+  }
+}
+@media screen and (width < 500px) {
   .skillsSection {
     width: auto;
   }
   .biography {
     width: 95%;
   }
+  .lineGraphic1 {
+    width: 150px;
+    
+  }
+  .lineGraphicSpan {
+    min-width: none;
+    font-size: 1.5em;
+  }
+  
+  /* .sectionHeader {
+    font-size: 1em;
+  } */
+  .sectionHeader h1 {
+   
+    font-size: 40px;
+  }
+
+  .skillsSection {
+transform: translateX(-25px);
+  }
+  
 }
