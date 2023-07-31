@@ -6,8 +6,8 @@ import { ThemeProvider } from "@emotion/react";
 import { Element } from "react-scroll";
 import SubmissionPopup from "./SubmissionPopup";
 
-import { API } from "aws-amplify";
-import { createEmail } from "../graphql/mutations";
+// import { API } from "aws-amplify";
+// import { createEmail } from "../graphql/mutations";
 
 const Contact = (props) => {
   //state logic for updating and storing contact fields
@@ -32,14 +32,14 @@ const Contact = (props) => {
     if (name && email && message) {
       
       try {
-        await API.graphql({
-          query: createEmail,
-          variables: {
-            input: {
-              name, email, message
-            }
-          }
-        }).then(response => console.log(response))
+        // await API.graphql({
+        //   query: createEmail,
+        //   variables: {
+        //     input: {
+        //       name, email, message
+        //     }
+        //   }
+        // }).then(response => console.log(response))
 
         setIsSubmissionPopupOpen(true);}
     
