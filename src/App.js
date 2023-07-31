@@ -10,6 +10,11 @@ import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
 import classes from "./App.module.css";
 
+import Amplify from '@aws-amplify/core'
+import config from '../src/aws-exports'
+Amplify.configure(config)
+
+
 // import FlyInRight from "./Components/AnimationWrappers/FlyInRight";
 // import PopulateChildrenDelayed from "./Components/AnimationWrappers/PopulateChildrenDelayed";
 
