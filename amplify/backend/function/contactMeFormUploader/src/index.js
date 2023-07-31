@@ -1,0 +1,30 @@
+const aws = require('aws-sdk')
+const ses = new aws.SES()
+
+exports.handler = async (event) => {
+  for (const streamedItem of event.Records) {
+    if (streamedItem.eventName === 'INSERT') {
+      //pull off items from stream
+      const contactName = streamedItem.dynamodb.NewImage.name.S
+      const contactEmail = streamedItem.dynamodb.NewImage.email.S
+      const contactMessage = streamedItem.dynamodb.NewImage.message.S
+
+      await ses
+          .sendEmail({
+            Destination: {
+              ToAddresses: [process.env.SES_EMAIL],
+            },
+            Source: process.env.SES_EMAIL,
+            Message: {
+              Subject: { Data: 'Email Submission' },
+              Body: {
+                Text: { Data: ` ${contactName} saw the site. Their email is ${contactEmail}. Heres the message ${contactMessage}` },
+              },
+            },
+          })
+          .promise()
+    }
+  }
+  return { status: 'done' }
+}
+

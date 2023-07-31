@@ -1,0 +1,63 @@
+{
+  "api": {
+    "mywebsite": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "function": {
+    "contactMeFormUploader": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "mywebsite"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_contactMeFormUploader_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactMeFormUploader"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactMeFormUploader_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactMeFormUploader"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactMeFormUploader_sesEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactMeFormUploader"
+        }
+      ]
+    }
+  }
+}

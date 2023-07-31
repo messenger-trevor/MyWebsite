@@ -4,7 +4,10 @@ import { Send } from "@mui/icons-material";
 import classes from "./Contact.module.css";
 import { ThemeProvider } from "@emotion/react";
 import { Element } from "react-scroll";
-import SubmissionPopup from "./SubmissionPopup"
+import SubmissionPopup from "./SubmissionPopup";
+
+// import { API } from "aws-amplify";
+// import { createEmail } from "../graphql/mutations";
 
 const Contact = (props) => {
   //state logic for updating and storing contact fields
@@ -22,28 +25,33 @@ const Contact = (props) => {
   });
 
   // prevents default on click submit handling and currently logs data to console
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log("Form submitted!");
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-
     //constructs the json package to be sent with post request
-    const postPackage = {
-      Name: name,
-      Email: email,
-      Message: message
-    };
+    if (name && email && message) {
+      
+      try {
+        // await API.graphql({
+        //   query: createEmail,
+        //   variables: {
+        //     input: {
+        //       name, email, message
+        //     }
+        //   }
+        // }).then(response => console.log(response))
 
-    console.log(postPackage);
-
-    setIsSubmissionPopupOpen(true);
+        setIsSubmissionPopupOpen(true);}
+    
+      catch(e) {
+        console.log("error")
+      }
+    }
 
     
+
     // Resets the form
-    
+
     setName("");
     setEmail("");
     setMessage("");
@@ -114,9 +122,9 @@ const Contact = (props) => {
             </Button>
           </Box>
           <SubmissionPopup
-          open={isSubmissionPopupOpen}
-          onClose={() => setIsSubmissionPopupOpen(false)}
-        />
+            open={isSubmissionPopupOpen}
+            onClose={() => setIsSubmissionPopupOpen(false)}
+          />
         </ThemeProvider>
       </div>
     </div>
