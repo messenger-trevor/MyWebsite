@@ -1,7 +1,7 @@
-const aws = require('aws-sdk')
-const ses = new aws.SES()
+import { SES } from 'aws-sdk'
+const ses = new SES()
 
-exports.handler = async (event) => {
+export async function handler(event) {
   for (const streamedItem of event.Records) {
     if (streamedItem.eventName === 'INSERT') {
       //pull off items from stream

@@ -16,7 +16,7 @@
         "contactMeFormUploader": {
           "sesEmail": "trevormessengerdev@gmail.com",
           "deploymentBucketName": "amplify-amplify2135143cfc914-staging-164039-deployment",
-          "s3Key": "amplify-builds/contactMeFormUploader-753330487042314e595a-build.zip"
+          "s3Key": "amplify-builds/contactMeFormUploader-6675444f6b4c5732374d-build.zip"
         }
       },
       "api": {
