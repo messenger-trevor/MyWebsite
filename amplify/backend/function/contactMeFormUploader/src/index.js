@@ -1,4 +1,5 @@
-import { SES } from 'aws-sdk'
+import SES from 'aws-sdk'
+
 const ses = new SES()
 
 export async function handler(event) {
@@ -18,7 +19,7 @@ export async function handler(event) {
             Message: {
               Subject: { Data: 'Email Submission' },
               Body: {
-                Text: { Data: ` ${contactName} saw the site. Their email is ${contactEmail}. Heres the message ${contactMessage}` },
+                Text: { Data: ` ${contactName} saw the site. Their email is ${contactEmail}. Here's the message ${contactMessage}` },
               },
             },
           })
