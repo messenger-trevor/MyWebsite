@@ -1,0 +1,178 @@
+---
+import { Image } from "astro:assets";
+import { about, focusAreas } from "../data/site";
+import { stack } from "../data/stack";
+import profile from "../assets/profilePicture.jpg";
+---
+
+<section id="about" class="section about">
+  <div class="intro reveal from-bottom">
+    <h2 class="lead">A developer who gets&hellip;</h2>
+    <div class="focus">
+      {
+        focusAreas.map((area) => (
+          <div>
+            <h3>{area.title}</h3>
+            <ul>
+              {area.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="block">
+    <h2 class="section-title">Tech Stack</h2>
+    <ul class="stack">
+      {
+        stack.map((tech, i) => (
+          <li class="reveal from-bottom" style={`--i: ${i}`}>
+            <span class="logo-box">
+              <img src={tech.logo.src} alt="" loading="lazy" />
+            </span>
+            <span class="label">{tech.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div class="block">
+    <h2 class="section-title">About</h2>
+    <div class="bio">
+      <Image src={profile} alt="Portrait of Trevor" width={320} class="portrait" />
+      <div class="bio-text">
+        <h3>{about.heading}</h3>
+        {about.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 8vw, 6rem);
+  }
+  .block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .lead {
+    margin: 0 0 1.5rem;
+    text-align: center;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  /* One column with a shared left edge on phones, three columns from 600px. */
+  .focus {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 1.5rem;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .focus h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: var(--teal);
+  }
+  .focus ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1.8;
+  }
+  @media (min-width: 600px) {
+    .focus {
+      grid-template-columns: repeat(3, auto);
+      gap: 2rem 4rem;
+    }
+  }
+
+  /* Five columns, every logo in the same square box. */
+  .stack {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem 1rem;
+    width: 100%;
+    max-width: 34rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .stack li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 56px;
+    aspect-ratio: 1;
+  }
+  .logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .label {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  @media (max-width: 480px) {
+    /* Labels don't fit five-across on phones; keep them for screen readers. */
+    .label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+  }
+
+  /* Portrait beside the text on wide screens, stacked on narrow ones. */
+  .bio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem 3rem;
+    width: 100%;
+    max-width: 64rem;
+  }
+  .portrait {
+    flex: 0 0 auto;
+    width: min(100%, 320px);
+    height: auto;
+  }
+  .bio-text {
+    flex: 1 1 20rem;
+    min-width: 0;
+    text-align: left;
+  }
+  .bio-text h3 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.4rem, 3.5vw, 2.25rem);
+  }
+  .bio-text p {
+    margin: 0 0 1rem;
+    font-size: clamp(1rem, 2.4vw, 1.25rem);
+    line-height: 1.6;
+  }
+</style>

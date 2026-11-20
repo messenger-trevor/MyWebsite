@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+import { site } from "../data/site";
+import githubIcon from "../assets/icon_github.svg";
+import linkedInIcon from "../assets/icon_linkedIn.svg";
+import illustration from "../assets/codingIllustration.png";
+---
+
+<section class="hero">
+  <div class="hero-text reveal from-left">
+    <span class="slash" aria-hidden="true">/</span>
+    <h1>
+      Trevor<br /><span class="highlight">Messenger</span>
+    </h1>
+    <p class="role">{site.role}</p>
+    <ul class="social">
+      <li>
+        <a href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <img src={githubIcon.src} alt="" width="28" height="28" />
+        </a>
+      </li>
+      <li>
+        <a href={site.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <img src={linkedInIcon.src} alt="" width="28" height="28" />
+        </a>
+      </li>
+    </ul>
+  </div>
+  <Image
+    class="hero-art reveal from-right"
+    src={illustration}
+    alt="Illustration of me coding"
+    width={560}
+    loading="eager"
+  />
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem 4rem;
+    padding: clamp(2rem, 6vw, 5rem) 1.5rem;
+  }
+  /* The slash spans the whole block; name, role and icons share one left edge. */
+  .hero-text {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 0.5rem;
+    align-items: start;
+    color: var(--teal);
+  }
+  .slash {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: center;
+    font-size: clamp(6rem, 20vw, 13rem);
+    font-weight: 900;
+    line-height: 0.8;
+  }
+  h1 {
+    grid-column: 2;
+    margin: 0;
+    font-size: clamp(2.5rem, 9vw, 4.4rem);
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  .highlight {
+    background: linear-gradient(var(--orange), var(--orange)) 0 90% / 100% 40% no-repeat;
+  }
+  .role {
+    grid-column: 2;
+    margin: 0.75rem 0 0.25rem;
+    color: #000;
+    font-family: var(--font-alt);
+    font-weight: 400;
+    font-size: clamp(1.25rem, 4.5vw, 2.5rem);
+  }
+  .social {
+    grid-column: 2;
+    display: flex;
+    gap: 0.25rem;
+    margin: 0 0 0 -0.6rem; /* optically align the icons with the text edge */
+    padding: 0;
+    list-style: none;
+  }
+  .social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-bottom: 2px solid transparent;
+  }
+  .social a:hover {
+    border-bottom-color: var(--teal);
+  }
+  .hero-art {
+    width: min(100%, 560px);
+    height: auto;
+  }
+</style>

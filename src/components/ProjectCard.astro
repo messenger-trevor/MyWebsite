@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import type { Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+---
+
+<article class="card">
+  <header>
+    <h3>{project.name}</h3>
+    <p class="sub">{project.subheader}</p>
+    {project.status && <span class="badge">{project.status}</span>}
+  </header>
+  <Image src={project.image} alt={project.imageAlt} width={690} height={430} class="media" loading="lazy" />
+  <p class="tech">{project.techStack}</p>
+  <p class="links">
+    {
+      project.githubUrl && (
+        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+          Code repository
+        </a>
+      )
+    }
+    {
+      project.liveUrl && (
+        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+          Live site
+        </a>
+      )
+    }
+  </p>
+  <details>
+    <summary>Description</summary>
+    <p>{project.description}</p>
+  </details>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--teal);
+    background: white;
+    border: 0.1rem solid var(--teal);
+    border-radius: 4px;
+  }
+  header {
+    padding: 1rem 1rem 0.75rem;
+  }
+  h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  .sub {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+  }
+  .badge {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.1rem 0.7rem;
+    border-radius: 999px;
+    background: var(--orange);
+    color: #000;
+    font-size: 0.75rem;
+  }
+  .media {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  .tech {
+    margin: 0;
+    padding: 1rem 1rem 0.5rem;
+  }
+  .links {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0 1rem 1rem;
+  }
+  details {
+    margin-top: auto; /* keeps the Description row at the bottom of every card */
+    border-top: 1px solid var(--teal);
+    padding: 0.75rem 1rem;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 500;
+  }
+  details p {
+    margin: 0.75rem 0 0;
+    line-height: 1.5;
+  }
+</style>

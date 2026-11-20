@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --teal: #097179;
+  --orange: #e8986b; /* fills and highlights only */
+  --orange-text: #b5541c; /* orange text on white: 4.9:1 contrast */
+  --cream: #f0f4d1;
+  --nav-h: 3.5rem;
+  --font-main: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-alt: "Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: #000;
+  font-family: var(--font-main);
+  font-weight: 500;
+  overflow-x: hidden;
+}
+
+h2,
+h3 {
+  font-weight: 500; /* bold would select the Black font file */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--teal);
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* ---- shared section pieces ---- */
+.section {
+  border-top: 0.1rem solid var(--teal);
+  background: white;
+  padding: clamp(2rem, 7vw, 6rem) clamp(1rem, 7vw, 6rem);
+}
+
+.section-title {
+  display: inline-block;
+  margin: 0 0 clamp(1.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  background: linear-gradient(var(--orange), var(--orange)) 0 100% / 100% 45% no-repeat;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---- scroll reveal (only hides content when JS is running) ---- */
+.js .reveal {
+  opacity: 0;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  transition-delay: calc(var(--i, 0) * 120ms);
+}
+.js .reveal.from-left {
+  transform: translateX(-60px);
+}
+.js .reveal.from-right {
+  transform: translateX(60px);
+}
+.js .reveal.from-bottom {
+  transform: translateY(30px);
+}
+.js .reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
